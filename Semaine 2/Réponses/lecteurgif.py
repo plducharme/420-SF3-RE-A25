@@ -49,7 +49,7 @@ class FenetrePrincipale(QMainWindow):
         menu_controles = QMenu("&Contrôles")
         menu_controles.addAction(action_jouer)
         menu_controles.addAction(action_stop)
-        # Ajoute une séparateur avec la prochaine action
+        # Ajoute un séparateur avant la prochaine action
         menu_controles.addSeparator()
         menu_controles.addAction(action_quitter)
 
