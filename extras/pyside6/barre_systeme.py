@@ -20,7 +20,7 @@ class FenetrePrincipale(QMainWindow):
 
         # Créer l'icône à utiliser
         # <a href="https://www.flaticon.com/free-icons/concert" title="concert icons">Concert icons created by Freepik - Flaticon</a>
-        icone = QIcon("./images/rock.png")
+        icone = QIcon("../images/rock.png")
 
         # Créer l'icône dans la barre système, la barre système est similaire à une barre d'outils. On lui ajoute des
         # menus et des actions

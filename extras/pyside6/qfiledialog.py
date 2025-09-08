@@ -17,7 +17,7 @@ class QFileDialogExemple(QMainWindow):
     def bouton_clicked(self):
         # cette fonction statique ouvre un QFileDialog permettant de sélectionner plusieurs fichiers
         # Retourne un Tuple() contenant la liste des fichiers et le filtre appliqué
-        fichiers = QFileDialog.getOpenFileNames(self, "Choisir images", "./images", "Fichiers png (*.png)")
+        fichiers = QFileDialog.getOpenFileNames(self, "Choisir images", "../images", "Fichiers png (*.png)")
 
         for fichier in fichiers[0]:
             label = QLabel()
