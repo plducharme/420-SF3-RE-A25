@@ -11,9 +11,9 @@ plt.plot(valeurs_x, valeurs_y)
 plt.show()
 
 # On peut passer des paramètres pour personnaliser le graphique
-# marker : forme des points
-# color : couleur de la ligne
-# linestyle : style de la ligne
+# marker : forme des points https://matplotlib.org/stable/gallery/lines_bars_and_markers/marker_reference.html#sphx-glr-gallery-lines-bars-and-markers-marker-reference-py
+# color : couleur de la ligne https://matplotlib.org/stable/users/explain/colors/colors.html#colors-def
+# linestyle : style de la ligne {'-', '--', '-.', ':', '', (offset, on-off-seq), ...}
 plt.plot(valeurs_x, valeurs_y, marker="o", color="red", linestyle="--")
 plt.show()
 
