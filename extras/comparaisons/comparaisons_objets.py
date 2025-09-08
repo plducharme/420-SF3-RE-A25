@@ -55,7 +55,19 @@ class ObjetAvecComparaison:
 objet_comparable1 = ObjetAvecComparaison(5)
 objet_comparable2 = ObjetAvecComparaison(5)
 
+# À noter que la comparaison suivante utilise la méthode __eq__ redéfinie dans la classe ObjetAvecComparaison
 if objet_comparable1 == objet_comparable2:
     print("Les objets comparable sont égaux")
 else:
     print("Les objets comparables ne sont pas égaux")
+
+# De la même manière, les autres opérateurs de comparaison utilisent les méthodes redéfinies dans la classe
+objet_comparable3 = ObjetAvecComparaison(10)
+objet_comparable4 = ObjetAvecComparaison(8)
+# Cette comparaison utilise la méthode __gt__ redéfinie dans la classe ObjetAvecComparaison
+if objet_comparable3 > objet_comparable4:
+    print("objet_comparable3 est plus grand que objet_comparable4")
+# Cette comparaison utilise la méthode __lt__ redéfinie dans la classe ObjetAvecComparaison
+if objet_comparable4 < objet_comparable3:
+    print("objet_comparable4 est plus petit que objet_comparable3")
+# Ansi de suite pour les autres opérateurs de comparaison
