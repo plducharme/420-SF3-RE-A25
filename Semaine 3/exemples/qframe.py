@@ -23,7 +23,7 @@ class FenetrePrincipale(QMainWindow):
         # Le QLabel hérite de QFrame, on peut donc aussi lui appliquer un style de cadre.
         # Il est possible de changer les options de forme et d'ombre indépendamment.
         etiquette.setFrameShape(QFrame.Shape.Panel)
-        etiquette.setFrameShadow(QFrame.Shadow.Sunken)
+        etiquette.setFrameShadow(QFrame.Shadow.Raised)
         disposition.addWidget(etiquette)
 
         self.setCentralWidget(widget_central)
