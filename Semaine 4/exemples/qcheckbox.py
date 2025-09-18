@@ -29,7 +29,6 @@ class FenetrePrincipale(QMainWindow):
         print("Case canard clicked")
 
 
-
 app = QApplication()
 fp = FenetrePrincipale()
 fp.show()
