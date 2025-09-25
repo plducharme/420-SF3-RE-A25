@@ -31,6 +31,7 @@ class FenetrePrincipale(QMainWindow):
         self.barre_simple.setValue(self.avancement)
         # self.barre_occupee.setValue(self.avancement)
 
+
 app = QApplication()
 fp = FenetrePrincipale()
 fp.show()
