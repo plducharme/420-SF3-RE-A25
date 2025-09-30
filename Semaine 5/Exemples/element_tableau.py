@@ -72,6 +72,20 @@ class ElementTableauPeriodique:
             return liste_elements
 
 
+
+    @staticmethod
+    def enregistrer(chemin: str, liste_elements):
+        elements_dicts = []
+        for e in liste_elements:
+            element = {"Atomic Number":e.numero_atomique, "Symbol": e.symbole, "Name": e.nom, "Year Discovered": e.annee_decouverte, "Atomic Mass": e.masse_atomique}
+            elements_dicts.append(element)
+        with open(chemin, mode="w", encoding="utf-8-sig", newline="") as fichier:
+            writer = csv.DictWriter(fichier, fieldnames=["Atomic Number", "Symbol", "Name", "Year Discovered", "Atomic Mass"], delimiter=";")
+            writer.writeheader()
+            writer.writerows(elements_dicts)
+
+
+
 if __name__ == "__main__":
     liste_elem = ElementTableauPeriodique.charger_donnees("periodic-table.csv")
     for e in liste_elem:
