@@ -13,8 +13,7 @@ class TicTacToe(QMainWindow):
         widget_central.setLayout(disposition_jeu)
         self.setCentralWidget(widget_central)
 
-
-        # boucles pour créer les boutons
+        # boucles pour créer les boutons (de façon dynamique, aurait pu êtr fait manuellement)
         for ligne in range(3):
             for colonne in range(3):
                 bouton = QPushButton()
@@ -23,7 +22,6 @@ class TicTacToe(QMainWindow):
                 bouton.clicked.connect(self.bouton_clicked)
 
         self.jeu = TicTacToeJeu()
-
 
     # lorsqu'un des boutons est cliqué, cette méthode est appelée
     def bouton_clicked(self):
@@ -59,7 +57,6 @@ class TicTacToe(QMainWindow):
             dialog.exec()
 
 
-
 # Modèle représentant un joueur
 class Joueur:
     def __init__(self, nom: str, pion: str):
@@ -74,7 +71,7 @@ class TicTacToeJeu:
 
         self.tableau_jeu = [[None, None, None],
                        [None, None, None],
-                       [None, None, None] ]
+                       [None, None, None]]
 
         # utiliser deque pour alterner entre les joueurs
         self.joueurs = deque([Joueur("Alice", "X"), Joueur("Bob", "O")])
