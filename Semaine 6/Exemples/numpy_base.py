@@ -10,12 +10,13 @@ array_2d = np.array([[1, 2, 3], [4, 5, 6]])
 print(array_2d)
 
 array_moy = np.array([75.0, 86.6, 65.2, 45.7, 99.9, 72.4])
+print(f"Array pour les calculs:{array_moy}")
 # moyenne
-print(np.mean(array_moy))
+print(f"Moyenne:{np.mean(array_moy)}")
 # médiane
-print(np.median(array_moy))
+print(f"Médiane:{np.median(array_moy)}")
 # Écart type
-print(np.std(array_moy))
+print(f"Écart Type:{np.std(array_moy)}")
 
 # exemple arange
 array_arange = np.array(np.arange(0.25, 2.76, 0.25))
