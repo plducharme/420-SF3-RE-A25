@@ -87,7 +87,7 @@ class BombardierJeu:
         transform_cible = QTransform()
         transform_cible.translate(self.position_cible.x(), self.position_cible.y())
         painter.setTransform(transform_cible)
-        painter.drawPixmap(self.position_cible.toPoint(), self.image_cible)
+        painter.drawPixmap(0, 0, self.image_cible)
 
         if self.position_bombe is not None:
             painter.drawPixmap(self.position_bombe.toPoint(), self.image_bombe)
