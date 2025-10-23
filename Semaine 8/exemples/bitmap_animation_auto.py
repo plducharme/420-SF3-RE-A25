@@ -59,6 +59,7 @@ class BitmapAnimationAuto(QMainWindow):
         self.nom_fichier = QFileDialog.getOpenFileName(self, "Ouvrir Image", "./images", "Images (*.png *.jpg)")
         prefixe_image = self.nom_fichier[0].split(".")[0]
         suffixe_image = self.nom_fichier[0].split(".")[-1]
+        # Calcule le nombre d'images disponibles
         nombre_images = len(glob.glob(os.path.join("./images", prefixe_image + "_*." + suffixe_image)))
 
         self.image_animee = ImageAnimee(prefixe_image, suffixe_image, nombre_images, self)

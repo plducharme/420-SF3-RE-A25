@@ -22,7 +22,7 @@ class Fenetre(QWidget):
         self.animation.setStartValue(QPoint(10, 10))
         self.animation.setEndValue(QPoint(400, 400))
         self.animation.setDuration(2000)
-        self.animation.setEasingCurve(QEasingCurve.Type.OutBounce)
+        self.animation.setEasingCurve(QEasingCurve.Type.InCubic)
 
         self.animation2 = QPropertyAnimation(widget_enfant, b"size")
         self.animation2.setStartValue(QSize(10, 10))
@@ -30,8 +30,8 @@ class Fenetre(QWidget):
         self.animation2.setDuration(1500)
         self.animation2.setEasingCurve(QEasingCurve.Type.OutCurve)
 
-        # self.anim_group = QParallelAnimationGroup()
-        self.anim_group = QSequentialAnimationGroup()
+        self.anim_group = QParallelAnimationGroup()
+        # self.anim_group = QSequentialAnimationGroup()
         self.anim_group.addAnimation(self.animation)
         self.anim_group.addAnimation(self.animation2)
         self.anim_group.start()
