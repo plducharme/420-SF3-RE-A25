@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QApplication, QTextEdit, QGraphicsView, QGraphicsS
 from PySide6.QtGui import QPixmap
 from PySide6.QtCore import QPointF, QRectF, QSize, Qt
 
+
 class GraphicsCollision(QFrame):
 
     def __init__(self):

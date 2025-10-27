@@ -43,8 +43,6 @@ class BitmapAnimationAuto(QMainWindow):
 
         self.nom_fichier = ""
 
-
-
     def start_stop(self):
         if self.timer.isActive():
             self.timer.stop()
@@ -66,7 +64,7 @@ class BitmapAnimationAuto(QMainWindow):
         self.image_animee.dessiner(self.index_image)
 
 
-class ImageAnimee():
+class ImageAnimee:
 
     def __init__(self, prefixe_image: str, suffixe_image: str, nb_images: int, vue: BitmapAnimationAuto):
         self.prefixe_image = prefixe_image
