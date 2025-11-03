@@ -17,6 +17,7 @@ class EvenementsDemo(QFrame):
         self.libelle.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.disposition.addWidget(self.libelle)
 
+    # mousePressEvent() gère les événements lors qu'un bouton de souris est pesé
     def mousePressEvent(self, event: QMouseEvent) -> None:
         # On va changer le QLabel sur un click droit
         if event.button() == Qt.MouseButton.RightButton:
