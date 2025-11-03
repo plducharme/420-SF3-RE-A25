@@ -25,14 +25,16 @@ class Fenetre(QMainWindow):
     def mon_signal_declenche(self, nouveau_texte: str, longueur_texte: int):
         self.etiquette.setText(nouveau_texte + " " + str(longueur_texte))
 
-    # Utiliser un bouton pour appeler le setText() du MonQLineEdit qui dclenchera le signal "monSignal"
+    # Utiliser un bouton pour appeler le setText() du MonQLineEdit qui déclenchera le signal "monSignal"
     def bouton_clicked(self):
         self.mon_line_edit.setText("Ceci est un test")
+
 
 # Un widget personnalisé qui va envoyer le signal personnalisé lorsque le setText() est appelé
 class MonQLineEdit(QLineEdit):
     # défini notre signal avec sa signature (i.e. les types qui seront envoyés)
     mon_signal = Signal(str, int)
+
     def __init__(self):
         super().__init__()
 

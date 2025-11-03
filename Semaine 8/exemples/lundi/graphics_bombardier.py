@@ -53,7 +53,8 @@ class BombardierApp(QFrame):
             if self.bombe is None:
                 self.bombe = Bombe(self.bombardier.pos())
                 self.scene.addItem(self.bombe)
-
+        else:
+            super().keyPressEvent(event)
 
 
 class Bombardier(QGraphicsPixmapItem):

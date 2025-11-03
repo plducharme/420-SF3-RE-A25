@@ -1,6 +1,6 @@
 from PySide6.QtCore import QSize
-from PySide6.QtGui import QMouseEvent, Qt, QAction
-from PySide6.QtWidgets import QApplication, QMainWindow, QLabel, QFrame, QVBoxLayout
+from PySide6.QtGui import QMouseEvent, Qt
+from PySide6.QtWidgets import QApplication, QLabel, QFrame, QVBoxLayout
 
 
 class EvenementsDemo(QFrame):

@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import QApplication, QTextEdit, QFrame, QVBoxLayout
 from PySide6.QtCore import Qt
 
+
 class ClavierSouris(QFrame):
 
     def __init__(self):
@@ -31,17 +32,7 @@ class ClavierSouris(QFrame):
             self.output.append("Click de droit")
 
 
-
-
 app = QApplication()
 cs = ClavierSouris()
 cs.show()
 app.exec()
-
-
-
-
-
-
-
-

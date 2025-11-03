@@ -2,7 +2,6 @@ from PySide6.QtCore import QSize
 from PySide6.QtWidgets import QApplication, QVBoxLayout, QLabel, QLineEdit, QWidget, QFrame
 
 
-
 class Fenetre(QFrame):
 
     def __init__(self):
@@ -23,8 +22,6 @@ class Fenetre(QFrame):
 
         self.disposition.addWidget(self.libelle)
         self.disposition.addWidget(self.texte_edit)
-
-
 
 
 app = QApplication()

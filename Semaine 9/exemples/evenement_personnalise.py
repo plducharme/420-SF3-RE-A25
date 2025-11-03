@@ -3,12 +3,10 @@ from PySide6.QtCore import Qt, QEvent, QSize, QCoreApplication
 
 
 class EvenementPersonnalise(QEvent):
-
     # variable de classe pour enregistrer l'événement personnalisé
     EventType = QEvent.Type(QEvent.registerEventType())
 
     def __init__(self, donnees: dict):
-
         super().__init__(EvenementPersonnalise.EventType)
         self.donnees = donnees
 
@@ -43,7 +41,7 @@ class Fenetre(QFrame):
         donnees = {
             "source": origine.objectName(),
             "grandeur": f"largeur: {origine.size().width()} hauteur: {origine.size().height()}"
-                   }
+        }
 
         evenement = EvenementPersonnalise(donnees)
         # On envoie l'événement via l'application. Le premier paramètre est le receveur de l'événement (ex: fenêtre, widget)
@@ -52,18 +50,17 @@ class Fenetre(QFrame):
         # sendEvent() envoie de façon synchrone
         QCoreApplication.postEvent(self, evenement)
 
-
     # Méthode redéfinie pour gérer les événements
     def event(self, event, /):
 
         if event.type() == EvenementPersonnalise.EventType:
             evenement: EvenementPersonnalise = event
-            self.output.append(f"Expéditeur: {evenement.donnees["source"]}\tgrandeur: {evenement.donnees["grandeur"]}\n")
+            self.output.append(
+                f"Expéditeur: {evenement.donnees["source"]}\tgrandeur: {evenement.donnees["grandeur"]}\n")
             return True
         else:
             # pour que les autres événements soient gérés normalement
             return super().event(event)
-
 
 
 app = QApplication()
