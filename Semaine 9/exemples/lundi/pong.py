@@ -56,7 +56,7 @@ class PongJeu:
     ESPACEMENT = 20
 
     GRANDEUR_BALLE = 10
-    VITESSE_BALLE = 50
+    VITESSE_BALLE = 200
 
     def __init__(self):
 
@@ -93,11 +93,9 @@ class PongJeu:
         self.scene.addItem(self.text_score_j1)
         self.scene.addItem(self.text_score_j2)
 
-        self.balle = QGraphicsEllipseItem(QRect(PongJeu.LARGEUR_JEU / 2, PongJeu.HAUTEUR_JEU /2, PongJeu.GRANDEUR_BALLE, PongJeu.GRANDEUR_BALLE))
-        self.direction_balle = random.randint(1, 359)
-        if self.direction_balle == 180:
-            self.direction_balle = 200
-        # self.generer_position_balle()
+        self.balle = QGraphicsEllipseItem(QRect(0, 0, PongJeu.GRANDEUR_BALLE, PongJeu.GRANDEUR_BALLE))
+        self.direction_balle = None
+        self.generer_position_balle()
 
         self.scene.addItem(self.balle)
 
@@ -121,6 +119,7 @@ class PongJeu:
         gauche_droite = random.randint(0, 1)
         if gauche_droite == 0:
             self.direction_balle = -self.direction_balle
+        print(f"direction balle: {self.direction_balle}")
         self.balle.setPos(QPointF(PongJeu.LARGEUR_JEU / 2, PongJeu.HAUTEUR_JEU / 2))
 
     def verifier_collision(self):
