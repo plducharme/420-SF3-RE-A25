@@ -25,7 +25,8 @@ class MongoExemple(QMainWindow):
         self.mongo_client.find({"nom": "Code Monkeys"}, "")
         self.mongo_client.find({"annee_debut": {"$lt": 2010}}, "nom")
         self.mongo_client.supprimer_un({"nom": "Code Monkeys"})
-        self.mongo_client.supprimer_plusieurs()
+        # Si on passe un dictionnaire vide, il n'y a pas de critères, donc tout est supprimé
+        self.mongo_client.supprimer_plusieurs({})
 
 
 class MongoTestClient:
@@ -36,6 +37,7 @@ class MongoTestClient:
         # Vous pouvez la remplacer par celle provenant de la console Atlas (cluster -> connect -> drivers)
         adresse_connexion = ("mongodb+srv://"+configs['user']+":" + configs['password'] +
                              configs["server"] + "/?retryWrites=true&w=majority")
+        # adresse_connexion = "mongodb+srv://dutch80:<db_password>@testcluster.va4xpjo.mongodb.net/?appName=testcluster"
         self.client = MongoClient(adresse_connexion, server_api=pymongo.server_api.ServerApi('1'))
         # Se connecter à la BD
         self.db = self.client['ContenuSurDemande']
@@ -92,9 +94,9 @@ class MongoTestClient:
         self.collection.delete_one(query_object)
         self.append_texte("Suppression d'un document")
 
-    def supprimer_plusieurs(self):
+    def supprimer_plusieurs(self, query_object: dict):
         # on peut specifier un filtre, voir supprimer_un. Si on ne met aucun filtre, tous les documents seront supprimes
-        resultat = self.collection.delete_many({})
+        resultat = self.collection.delete_many(query_object)
         self.append_texte("Nb suppressions: " + str(resultat.deleted_count))
 
     @staticmethod
