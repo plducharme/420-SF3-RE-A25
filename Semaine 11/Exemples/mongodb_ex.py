@@ -30,9 +30,12 @@ class MongoExemple(QMainWindow):
 
 class MongoTestClient:
     def __init__(self, textedit: QTextEdit):
+        # Charge les configs à partir du atlas.json, voir charger_configs()
         configs = MongoTestClient.charger_configs()
+        # Créer la chaîne de connexion
+        # Vous pouvez la remplacer par celle provenant de la console Atlas (cluster -> connect -> drivers)
         adresse_connexion = ("mongodb+srv://"+configs['user']+":" + configs['password'] +
-                             "@testcluster.va4xpjo.mongodb.net/?retryWrites=true&w=majority")
+                             configs["server"] + "/?retryWrites=true&w=majority")
         self.client = MongoClient(adresse_connexion, server_api=pymongo.server_api.ServerApi('1'))
         # Se connecter à la BD
         self.db = self.client['ContenuSurDemande']
@@ -100,8 +103,9 @@ class MongoTestClient:
         # Lors de votre inscription à MongoDB Atlas, vous pourrez créer un fichier atlas.json contenant le "user" et
         # le "password":
         # {
-        #   "user": "votre_user_atlas
-        #   "password": "votre_password_atlas"
+        #   "user": "votre_user_atlas",
+        #   "password": "votre_password_atlas",
+        #   "server": "adresse_du_serveur"
         # }
         with open("./atlas.json") as fichier_json:
             return json.load(fichier_json)

@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QApplication, QMainWindow, QDockWidget, QWidget
+from PySide6.QtWidgets import QApplication, QMainWindow, QDockWidget, QWidget, QFrame, QLabel, QVBoxLayout
 from PySide6.QtCore import Qt
 
 
@@ -14,6 +14,14 @@ class DockedExemple(QMainWindow):
         # Créer une fenêtre de type QDockWidget
         self.fenetre1 = QDockWidget()
         self.fenetre1.setWindowTitle("fenêtre 1")
+        # Contenu du dockwidget, on crée un widget avec notre contenu et on l'assigne au dockwidget
+        self.contenu_fenetre1 = QFrame()
+        self.disposition_fenetre1 = QVBoxLayout()
+        self.contenu_fenetre1.setLayout(self.disposition_fenetre1)
+        self.libelle_fenetre1 = QLabel("ceci est du contenu")
+        self.disposition_fenetre1.addWidget(self.libelle_fenetre1)
+        self.fenetre1.setWidget(self.contenu_fenetre1)
+
         # On assigne les fonctionnalités permises du QDockWidget (dans ce cas-ci, on a pas mis la possibilité de fermer
         # la fenêtre
         self.fenetre1.setFeatures(QDockWidget.DockWidgetFeature.DockWidgetMovable |
