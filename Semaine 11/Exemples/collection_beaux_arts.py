@@ -80,19 +80,6 @@ class CollectionBA(QMainWindow):
             for c in range(self.data.columnCount()):
                 index = self.data.index(l, c)
                 oeuvre[self.data.entetes[c]] = self.data.data(index, Qt.ItemDataRole.DisplayRole)
-                # match c:
-                #     case 0:
-                #         oeuvre["Numero_accession"] = self.data.data(index, Qt.ItemDataRole.DisplayRole)
-                #     case 1:
-                #         oeuvre["Categorie_objet"] = self.data.data(index, Qt.ItemDataRole.DisplayRole)
-                #     case 2:
-                #         oeuvre["Sous_categorie_objet"] = self.data.data(index, Qt.ItemDataRole.DisplayRole)
-                #     case 3:
-                #         oeuvre["Artiste_artisan"] = self.data.data(index, Qt.ItemDataRole.DisplayRole)
-                #     case 4:
-                #         oeuvre["Titre"] = self.data.data(index, Qt.ItemDataRole.DisplayRole)
-                #     case 5:
-                #         oeuvre["Date_accession"] = self.data.data(index, Qt.ItemDataRole.DisplayRole)
             collection.insert_one(oeuvre)
 
 
