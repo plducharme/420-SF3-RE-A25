@@ -24,6 +24,7 @@ df["Province"] = ["Québec", "Québec", "Québec", "Québec", "Ontario"]
 # Retourne une copie du DataFrame sans la colonne Province
 df2 = df.drop(columns=["Province"])
 
+print(f"Dataframe retourné sans la colonne Province\n{df2}")
 # Afficher les 5 premières lignes
 print(df.head(5))
 

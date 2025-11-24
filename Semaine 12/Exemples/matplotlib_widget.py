@@ -1,10 +1,9 @@
 from PySide6.QtWidgets import QFrame, QApplication, QLabel, QVBoxLayout
-import pandas as pd
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg, NavigationToolbar2QT
 import matplotlib
 import matplotlib.pyplot as plt
 
-
+# Dicte à matplotlib d'utiliser le canevas QT (FigureCanvasQTAgg) au lieu de générer une fenêtre séparée
 matplotlib.use("Qt5Agg")
 
 

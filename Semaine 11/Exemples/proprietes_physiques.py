@@ -98,7 +98,10 @@ class ProprietesPhysiquesModele(QAbstractTableModel):
         self.entetes_tableau = entetes_tableau
 
     def data(self, index, /, role=...):
-        return self.donnees[index.row()][self.entetes[index.column()]]
+        # Pour éviter que les cases à cocher apparaissent dans les cellules, seulement retourner pour le "DisplayRole"
+        if role == Qt.ItemDataRole.DisplayRole:
+            return self.donnees[index.row()][self.entetes[index.column()]]
+        return None
 
     def rowCount(self, /, parent=...):
         return len(self.donnees)

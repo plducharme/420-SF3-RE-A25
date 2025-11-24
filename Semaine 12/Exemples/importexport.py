@@ -13,9 +13,9 @@ class Impex:
         print(self.df.head(10))
         # Impression des dix dernières lignes
         print(self.df.tail(10))
-        # Impression des colonnes
+        # Impression des colonnes (Series)
         print(self.df.columns)
-        # Impression d'une colonne
+        # Impression d'une colonne (Series)
         print(self.df['SITE_NAME'])
 
         # Export vers un fichier excel (nécessite package openpyxl)
@@ -26,6 +26,9 @@ class Impex:
 
         # information sommaire sur le DataFrame (compte, moyenne, écart-type, minimum, maximum, percentiles, max)
         print(self.df.describe())
+
+        # Info plus détaillée sur le dataframe
+        print(self.df.info())
 
 
 impex = Impex()
